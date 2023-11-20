@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Estilo global da barra de rolagem */
+body {
+  scrollbar-width: thin;
+}
+
+/* Estilo específico para navegadores WebKit, como Chrome e Safari */
+body::-webkit-scrollbar {
+  width: 6px; /* Largura da barra de rolagem */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #c0c0c0; /* Cor da alça da barra de rolagem */
+  border-radius: 10px;
+}

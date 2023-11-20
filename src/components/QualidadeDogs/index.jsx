@@ -18,7 +18,7 @@ export const QualidadeDogs = ({ blok }) => {
           </h2>
         </div>
       </div>
-      <div className="flex justify-evenly bg-[#F6F6F6] pt-4">
+      <div className="flex justify-evenly bg-[#F6F6F6] pt-4 pb-6">
         {itens.cards.map((itemQualidadeDogs) => (
           <div className="w-[200px]">
             <div className="flex justify-center">

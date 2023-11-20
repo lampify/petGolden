@@ -3,6 +3,8 @@ import { useStoryblok, StoryblokComponent } from "@storyblok/react";
 import "./index.css";
 import { Hero } from "./components/Hero";
 import { QualidadeDogs } from "./components/QualidadeDogs";
+import { SobreDogs } from "./components/SobreDogs";
+import { Depoimento } from "./components/Depoimento";
 
 function App() {
   let slug =
@@ -19,6 +21,8 @@ function App() {
     <>
       <Hero blok={story.content} />
       <QualidadeDogs blok={story.content} />
+      <SobreDogs blok={story.content} />
+      <Depoimento blok={story.content} />
     </>
   );
 }
