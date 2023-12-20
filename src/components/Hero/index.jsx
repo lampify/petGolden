@@ -2,8 +2,6 @@ import { Header } from "../Header";
 import Circle from "../../assets/blob.png";
 import Patas from "../../assets/patas.png";
 
-import Ellipse from "../../assets/ellipse.png";
-
 export const Hero = ({ blok }) => {
   const itensHero = blok?.body?.find(
     (blokItem) => blokItem?.component === "hero"
@@ -13,6 +11,7 @@ export const Hero = ({ blok }) => {
     <div
       style={{
         backgroundImage: `url(${Patas})`,
+        backgroundSize: "cover",
       }}
       className="w-[100%] h-[100vh] bg-[#F6F6F6]"
     >
@@ -36,8 +35,8 @@ export const Hero = ({ blok }) => {
 
           <img
             src={itensHero.bannerPrincipal}
-            alt="patas de cachorro"
-            className="absolute w-[70%] left-[25%] top-[10%]"
+            alt="cachorro"
+            className="absolute object-cover w-[70%] left-[25%] top-[10%]"
           />
         </div>
       </div>

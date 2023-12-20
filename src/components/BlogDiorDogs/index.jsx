@@ -6,17 +6,18 @@ export function BlogDiorDogs({ blok }) {
   return (
     <div className="mt-24 mb-12">
       <div
-        className="h-[80vh] relative flex justify-center items-center"
+        className="h-[599px] relative flex justify-center items-center"
         style={{
           backgroundImage: `url(${Background})`,
+          backgroundSize: "cover",
         }}
       >
         <div className="w-[60%]">
           <div className="justify-center flex">
-            <div className="absolute top-[-116px]">
+            <div className="pb-[200px]">
               <img
                 alt="banner dior dogs"
-                className="h-[700px]"
+                className="h-[100%]"
                 src={itens.banner}
               />
             </div>

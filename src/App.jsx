@@ -6,6 +6,8 @@ import { QualidadeDogs } from "./components/QualidadeDogs";
 import { SobreDogs } from "./components/SobreDogs";
 import { Depoimento } from "./components/Depoimento";
 import { BlogDiorDogs } from "./components/BlogDiorDogs";
+import { FaleConosco } from "./components/FaleConosco";
+import { Rodape } from "./components/Rodape";
 
 function App() {
   let slug =
@@ -22,9 +24,11 @@ function App() {
     <>
       <Hero blok={story.content} />
       <QualidadeDogs blok={story.content} />
+      <FaleConosco blok={story.content} />
       <SobreDogs blok={story.content} />
       <BlogDiorDogs blok={story.content} />
       <Depoimento blok={story.content} />
+      <Rodape blok={story.content} />
     </>
   );
 }
