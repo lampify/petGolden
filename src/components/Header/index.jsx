@@ -1,17 +1,28 @@
+import Background from "../../assets/Group.png";
+
 export const Header = ({ blok }) => {
   const itensCabecalho = blok?.body?.find(
     (blokItem) => blokItem?.component === "header"
   )?.itensCabecalho;
 
   return (
-    <div className="w-[100%] h-[110px] text-white items-center justify-center flex ">
+    <div className="w-[100%] h-[120px] text-black items-center justify-center flex ">
       <div className="ml-[-6%] items-center justify-center flex">
         {itensCabecalho.map((itemBlok) => (
           <>
             {itemBlok?.img ? (
-              <div className="w-[157px] ml-14 h-20 ">
+              <div
+                style={{
+                  backgroundImage: `url(${Background})`,
+                }}
+                className="w-[133px] flex justify-center items-center ml-5 h-[105px] "
+              >
                 <div>
-                  <img alt="logo da página" src={itemBlok.img} />
+                  <img
+                    className="w-[100px] mb-2 ml-2"
+                    alt="logo da página"
+                    src={itemBlok.img}
+                  />
                 </div>
               </div>
             ) : (

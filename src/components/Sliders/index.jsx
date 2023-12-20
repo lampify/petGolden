@@ -1,37 +1,81 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useCallback } from "react";
+import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 
 export const Sliders = ({
   slide,
-  isVisibleFooter = true,
+  isVisibleChevron = false,
   bg = "gray-200",
   ...rest
 }) => {
   const slidesVisiveis = slide;
 
-  const [listSlide, setListSlide] = useState();
+  const [listSlide, setListSlide] = useState(slide[0]);
   const [slideSelecionado, setSlideSelecionado] = useState(0);
 
   const existeProximoSlide = slidesVisiveis.length > 1;
 
-  const exibirSlideSelecionado = useCallback(
-    (indexItem) => {
+  const amountSlide = slide.length - 1;
+
+  const modificarSlide = useCallback(
+    (index) => {
       if (slidesVisiveis) {
-        setListSlide(slidesVisiveis[indexItem]);
+        setListSlide(slidesVisiveis[index]);
+        setSlideSelecionado(index);
       }
     },
     [slidesVisiveis]
   );
 
-  useEffect(() => {
-    exibirSlideSelecionado(slideSelecionado);
-  }, [exibirSlideSelecionado, slideSelecionado]);
+  const nextSlide = useCallback(() => {
+    const indexItem = slideSelecionado + 1;
 
-  console.log(listSlide);
+    const isLastSlide = slideSelecionado === amountSlide;
+
+    if (isLastSlide) {
+      modificarSlide(0);
+    } else {
+      modificarSlide(indexItem);
+    }
+  }, [modificarSlide, amountSlide, slideSelecionado]);
+
+  const prevSlide = useCallback(() => {
+    const indexItem = slideSelecionado - 1;
+
+    const isFirstSlide = slideSelecionado === 0;
+
+    if (isFirstSlide) {
+      modificarSlide(amountSlide);
+    } else {
+      modificarSlide(indexItem);
+    }
+  }, [modificarSlide, amountSlide, slideSelecionado]);
+
   return (
     <div className="rounded-5px">
       <div className="h-full relative">
-        <div className="mb-[20px]">{listSlide?.content}</div>
-        {existeProximoSlide && isVisibleFooter && (
+        <div className="mb-[20px] flex justify-center">
+          {isVisibleChevron && (
+            <div className="items-center flex justify-center">
+              <FiChevronLeft
+                className="cursor-pointer"
+                onClick={prevSlide}
+                size={30}
+              />
+            </div>
+          )}
+          <div>{listSlide?.content}</div>
+          {isVisibleChevron && (
+            <div className="items-center flex justify-center">
+              <FiChevronRight
+                className="cursor-pointer"
+                onClick={nextSlide}
+                size={30}
+              />
+            </div>
+          )}
+        </div>
+
+        {existeProximoSlide && (
           <div className="flex justify-center">
             {slide.map((slideItem, index) => {
               return (
@@ -46,10 +90,10 @@ export const Sliders = ({
                   <div
                     className={`${
                       listSlide?.key === slideItem.key
-                        ? "bg-[#f63d3d]"
+                        ? "bg-[#003962]"
                         : "bg-gray-400"
                     } w-[10px] h-[10px] border-1px border-solid mr-1 cursor-pointer rounded-full`}
-                    onClick={() => setSlideSelecionado(index)}
+                    onClick={() => modificarSlide(index)}
                   />
                 </div>
               );

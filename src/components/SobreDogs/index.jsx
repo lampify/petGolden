@@ -6,13 +6,13 @@ export function SobreDogs({ blok }) {
     (blokItem) => blokItem?.component === "sobreEmpresa"
   );
   return (
-    <div className="flex mt-28 justify-around pb-10 ">
+    <div className="flex pt-28 justify-around pb-24 ">
       <Sliders
         slide={itens.cards.map((itemCard) => ({
           content: (
             <div className="w-[478px] h-[345px] flex items-center font-['Poppins']">
               <div>
-                <h4 className="text-[20px] text-[#F63D3D] mb-2 font-bold">
+                <h4 className="text-[20px] text-[#003962] mb-2 font-bold">
                   {itemCard.titulo}
                 </h4>
                 <p className="text-[14px]">{itemCard.subtitulo}</p>
