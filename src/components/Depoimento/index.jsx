@@ -8,45 +8,47 @@ export function Depoimento({ blok }) {
   return (
     <>
       <div className="mt-24 h-[calc(100vh-200px)] relative">
-        <div className="flex justify-center">
-          <h2 className="flex text-[28px] font-bold font-['Roboto']">
-            <p className="mr-3">{depoimentoItems.titulo}</p>
-            <p className="text-[#003962]">{depoimentoItems.titulo2}</p>
+        <div className="flex px-10 justify-center">
+          <h2 className="sm:text-[28px] text-center text-[18px] font-bold font-['Roboto']">
+            {depoimentoItems.titulo}
+            <span className="text-[#003962]">{depoimentoItems.titulo2}</span>
           </h2>
         </div>
-        <div className="flex mt-4 justify-center">
-          <p className="w-[800px] text-center  text-gray-500">
+        <div className="flex px-10 mt-4 justify-center">
+          <p className="sm:w-[800px] w-[100%] text-center text-gray-500">
             {depoimentoItems.subtitulo}
           </p>
         </div>
-        <div className="flex mt-4 justify-center ">
-          <div className="shadow-md p-7 bg-white rounded-2xl absolute mt-14 ">
-            <Sliders
-              isVisibleChevron
-              slide={depoimentoItems.cardDepoimento.map((itemCard) => ({
-                content: (
-                  <div className="w-[790px] h-[380px] grid justify-between items-center font-['Poppins']">
-                    <div className="flex justify-center">
-                      <div className="w-[85%]">
-                        <p className="text-[16px] text-center ">
-                          {itemCard.subtitulo}
-                        </p>
+        <div className="w-[100%] justify-center flex">
+          <div className="flex mt-4 justify-center px-20 ">
+            <div className="shadow-md p-7 bg-white rounded-2xl md:w-[900px] w-[90%] absolute mt-1 sm:mt-14 ">
+              <Sliders
+                isVisibleChevron
+                slide={depoimentoItems.cardDepoimento.map((itemCard) => ({
+                  content: (
+                    <div className="md:w-[790px] w-[100%] h-[380px] grid justify-between items-center font-['Poppins']">
+                      <div className="flex justify-center">
+                        <div className="w-[85%]">
+                          <p className="sm:text-[16px] text-[14px] text-center ">
+                            {itemCard.subtitulo}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex justify-center">
+                        <h4 className="sm:text-[20px] text-[16px] text-[#003962] mb-2 font-bold">
+                          {itemCard.titulo}
+                        </h4>
                       </div>
                     </div>
-                    <div className="flex justify-center">
-                      <h4 className="text-[20px] text-[#003962] mb-2 font-bold">
-                        {itemCard.titulo}
-                      </h4>
-                    </div>
-                  </div>
-                ),
-                key: itemCard._uid,
-              }))}
-            />
+                  ),
+                  key: itemCard._uid,
+                }))}
+              />
+            </div>
           </div>
         </div>
       </div>
-      <div className="bg-[#003962]  w-[full] h-[150px]" />
+      <div className="bg-[#003962]  w-[full] h-[180px]" />
     </>
   );
 }

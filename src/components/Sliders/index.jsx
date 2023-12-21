@@ -51,7 +51,7 @@ export const Sliders = ({
   }, [modificarSlide, amountSlide, slideSelecionado]);
 
   return (
-    <div className="rounded-5px">
+    <div className="w-[100%] rounded-5px">
       <div className="h-full relative">
         <div className="mb-[20px] flex justify-center">
           {isVisibleChevron && (

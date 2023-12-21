@@ -5,7 +5,7 @@ export function SobreDogs({ blok }) {
     (blokItem) => blokItem?.component === "sobreEmpresa"
   );
   return (
-    <div className="flex pt-28 justify-around pb-24 ">
+    <div className="flex md:pt-28 py-10 justify-around pb-24 ">
       <Sliders
         slide={sobreDogsItems.cards.map((itemCard) => ({
           content: (

@@ -15,8 +15,8 @@ export function FaleConosco({ blok }) {
       }}
       className="flex justify-center items-center px-10 my-24 h-[452px]"
     >
-      <div className="w-[33%]">
-        <h2 className="text-black text-center mb-5 text-3xl font-bold font-['Roboto']">
+      <div className="2xl:w-[33%] w-[100%] sm:w-[60%] lg:w-[40%]">
+        <h2 className="text-black text-center mb-5 text-2xl sm:text-3xl font-bold font-['Roboto']">
           {faleConoscoItems.titulo}{" "}
           <span className="text-[#003962]">
             {faleConoscoItems.tituloSublinhado}

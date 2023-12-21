@@ -14,13 +14,13 @@ export function Rodape({ blok }) {
   const valueYear = new Date().getFullYear();
 
   return (
-    <div className="bg-[#003962]  px-40 mt-24 h-[452px]">
-      <div className="flex justify-between h-[80%] items-center ">
-        <div>
+    <div className="bg-[#003962] sm:pt-0 pt-7 px-5 sm:px-10 xl:px-40 mt-24 h-[452px]">
+      <div className="sm:flex  justify-between h-[80%] items-center ">
+        <div className="flex sm:grid">
           {rodapeItems.patrocinadores.map((item) => (
             <img
               alt=""
-              className="w-[130px] mb-2 bg-white rounded-lg"
+              className="w-[130px] sm:mr-0 mr-2 mb-4 sm:mb-2 bg-white rounded-lg"
               src={item.img}
             />
           ))}
@@ -51,7 +51,7 @@ export function Rodape({ blok }) {
       </div>
       <div className="flex font-['Poppins'] text-[14px] text-white items-center h-[10%] justify-center">
         <div>
-          <p>
+          <p className="sm:text-[14px] text-[13px] ">
             {rodapeItems.direitosReservados} {valueYear} | Todos os direitos
             reservados
           </p>
