@@ -1,17 +1,15 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
+import { storyblokInit, apiPlugin } from "@storyblok/react";
+
 import App from "./App";
 import "./index.css";
-
-import { storyblokInit, apiPlugin } from "@storyblok/react";
 
 storyblokInit({
   accessToken: "Alqit3DhTkW64Hr4nmwcxQtt",
   use: [apiPlugin],
   components: {},
   apiOptions: {
-    // for spaces located in the US or China:
-    // region: "us" or "cn", // you need to specify the region
     region: "",
   },
 });

@@ -21,15 +21,15 @@ function App() {
   }
 
   return (
-    <>
+    <div className="overflow-hidden">
       <Hero blok={story.content} />
       <QualidadeDogs blok={story.content} />
-      <FaleConosco blok={story.content} />
       <SobreDogs blok={story.content} />
       <BlogDiorDogs blok={story.content} />
       <Depoimento blok={story.content} />
+      <FaleConosco blok={story.content} />
       <Rodape blok={story.content} />
-    </>
+    </div>
   );
 }
 export default App;

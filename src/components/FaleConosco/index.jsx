@@ -1,10 +1,9 @@
-import { FaWhatsapp } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
+import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 
 import Background from "../../assets/background-yellow-patas.png";
 
 export function FaleConosco({ blok }) {
-  const itens = blok?.body?.find(
+  const faleConoscoItems = blok?.body?.find(
     (blokItem) => blokItem?.component === "faleConosco"
   );
 
@@ -18,11 +17,13 @@ export function FaleConosco({ blok }) {
     >
       <div className="w-[33%]">
         <h2 className="text-black text-center mb-5 text-3xl font-bold font-['Roboto']">
-          O seu <span className="text-[#003962]">melhor aumigo</span> esta aqui!
+          {faleConoscoItems.titulo}{" "}
+          <span className="text-[#003962]">
+            {faleConoscoItems.tituloSublinhado}
+          </span>{" "}
         </h2>
         <p className="font-['Roboto']  mb-5 text-center">
-          Entre em contato com a gente! tire suas dúvidas sobre o nosso
-          criadouro ou marque um visita
+          {faleConoscoItems.subtitulo}
         </p>
 
         <div className="  mb-3 flex justify-center">

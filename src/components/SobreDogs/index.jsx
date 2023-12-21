@@ -1,14 +1,13 @@
-import { ReactNode } from "react";
 import { Sliders } from "../Sliders";
 
 export function SobreDogs({ blok }) {
-  const itens = blok?.body?.find(
+  const sobreDogsItems = blok?.body?.find(
     (blokItem) => blokItem?.component === "sobreEmpresa"
   );
   return (
     <div className="flex pt-28 justify-around pb-24 ">
       <Sliders
-        slide={itens.cards.map((itemCard) => ({
+        slide={sobreDogsItems.cards.map((itemCard) => ({
           content: (
             <div className="w-[478px] h-[345px] flex items-center font-['Poppins']">
               <div>
@@ -24,13 +23,13 @@ export function SobreDogs({ blok }) {
       />
       <div
         style={{
-          backgroundColor: itens.corFundo,
+          backgroundColor: sobreDogsItems.corFundo,
         }}
         className="w-[571px] rounded-[10px] h-[380px] relative"
       >
         <img
           alt="imagem da Gabi com um filhote de golden"
-          src={itens.imagem}
+          src={sobreDogsItems.imagem}
           className="absolute w-[571px] rounded-[10px] h-[380px] object-center top-[-35px] right-[-35px] drop-shadow-2xl"
         />
       </div>
