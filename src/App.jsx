@@ -20,6 +20,16 @@ function App() {
     return <div>Loading...</div>;
   }
 
+  const faleConoscoItems = story.content?.body?.find(
+    (blokItem) => blokItem?.component === "faleConosco"
+  );
+
+  const linkWhatsApp =
+    "https://api.whatsapp.com/send?phone=" +
+    faleConoscoItems.whatsApp +
+    "&text=" +
+    faleConoscoItems.tituloWhatsApp;
+
   return (
     <div className="overflow-hidden">
       <Hero blok={story.content} />
@@ -27,8 +37,8 @@ function App() {
       <SobreDogs blok={story.content} />
       <BlogDiorDogs blok={story.content} />
       <Depoimento blok={story.content} />
-      <FaleConosco blok={story.content} />
-      <Rodape blok={story.content} />
+      <FaleConosco linkWhatsApp={linkWhatsApp} blok={story.content} />
+      <Rodape linkWhatsApp={linkWhatsApp} blok={story.content} />
     </div>
   );
 }

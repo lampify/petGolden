@@ -2,16 +2,10 @@ import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 
 import Background from "../../assets/background-yellow-patas.png";
 
-export function FaleConosco({ blok }) {
+export function FaleConosco({ blok, linkWhatsApp }) {
   const faleConoscoItems = blok?.body?.find(
     (blokItem) => blokItem?.component === "faleConosco"
   );
-
-  const entrarWhatsApp =
-    "https://api.whatsapp.com/send?phone=" +
-    faleConoscoItems.whatsApp +
-    "&text=" +
-    faleConoscoItems.tituloWhatsApp;
 
   return (
     <div
@@ -34,7 +28,7 @@ export function FaleConosco({ blok }) {
         </p>
 
         <div className="  mb-3 flex justify-center">
-          <a target="_blank" href={entrarWhatsApp} rel="noreferrer">
+          <a target="_blank" href={linkWhatsApp} rel="noreferrer">
             <button
               type="button"
               className="text-white bg-[#47dc53] font-medium rounded-xl text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 shadow-[0_4px_9px_-4px_#14a44d] transition duration-150 ease-in-out hover:bg-success-600 hover:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.3),0_4px_18px_0_rgba(20,164,77,0.2)] focus:bg-success-600 focus:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.3),0_4px_18px_0_rgba(20,164,77,0.2)] focus:outline-none focus:ring-0 active:bg-success-700 active:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.3),0_4px_18px_0_rgba(20,164,77,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(20,164,77,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.2),0_4px_18px_0_rgba(20,164,77,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.2),0_4px_18px_0_rgba(20,164,77,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.2),0_4px_18px_0_rgba(20,164,77,0.1)]"

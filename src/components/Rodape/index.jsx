@@ -6,7 +6,7 @@ import {
   FaHome,
 } from "react-icons/fa";
 
-export function Rodape({ blok }) {
+export function Rodape({ blok, linkWhatsApp }) {
   const rodapeItems = blok?.body?.find(
     (blokItem) => blokItem?.component === "rodape"
   );
@@ -27,22 +27,42 @@ export function Rodape({ blok }) {
         </div>
         <div className="font-['Poppins']  text-white">
           <p className="font-semibold text-[26px]">Contato:</p>
-          <p className="flex mb-2 items-center text-[14px]">
-            <FaWhatsapp size={14} className="mr-2" />
-            {rodapeItems.whatsApp}
-          </p>
-          <p className="flex  mb-2 items-center text-[14px]">
-            <FaInstagram size={14} className="mr-2" />
-            {rodapeItems.contatoInstagran[0].titulo}
-          </p>
-          <p className="flex  mb-2 items-center text-[14px]">
-            <FaTiktok size={14} className="mr-2" />
-            {rodapeItems.contatoTiktok[0].titulo}
-          </p>
-          <p className="flex  mb-2 items-center text-[14px]">
-            <FaYoutube size={14} className="mr-2" />
-            {rodapeItems.contatoYoutube[0].titulo}
-          </p>
+          <a target="_blank" href={linkWhatsApp} rel="noreferrer">
+            <p className="flex mb-2 items-center text-[14px]">
+              <FaWhatsapp size={14} className="mr-2" />
+              {rodapeItems.whatsApp}
+            </p>
+          </a>
+          <a
+            target="_blank"
+            href={rodapeItems.contatoInstagran[0].link.url}
+            rel="noreferrer"
+          >
+            <p className="flex  mb-2 items-center cursor-pointer text-[14px]">
+              <FaInstagram size={14} className="mr-2" />
+              {rodapeItems.contatoInstagran[0].titulo}
+            </p>
+          </a>
+          <a
+            target="_blank"
+            href={rodapeItems.contatoTiktok[0].link.url}
+            rel="noreferrer"
+          >
+            <p className="flex  mb-2 items-center text-[14px]">
+              <FaTiktok size={14} className="mr-2" />
+              {rodapeItems.contatoTiktok[0].titulo}
+            </p>
+          </a>
+          <a
+            target="_blank"
+            href={rodapeItems.contatoYoutube[0].link.url}
+            rel="noreferrer"
+          >
+            <p className="flex  mb-2 items-center text-[14px]">
+              <FaYoutube size={14} className="mr-2" />
+              {rodapeItems.contatoYoutube[0].titulo}
+            </p>
+          </a>
           <p className="flex  mb-2 items-center text-[14px]">
             <FaHome size={14} className="mr-2" />
             {rodapeItems.endereco}
