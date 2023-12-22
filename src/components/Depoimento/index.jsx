@@ -9,6 +9,7 @@ export function Depoimento({ blok }) {
   return (
     <>
       <div
+        id="depoimentosId"
         style={{
           backgroundImage: `url(${Patas})`,
           backgroundSize: "cover",

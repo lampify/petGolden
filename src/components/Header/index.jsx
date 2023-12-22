@@ -1,7 +1,6 @@
 import Background from "../../assets/Group.png";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 import { MobileNavigationDialog } from "./components/MobileNavigationDialog";
-import { RxHamburgerMenu } from "react-icons/rx";
 
 export const Header = ({ blok }) => {
   const itensCabecalho = blok?.body?.find(
@@ -9,6 +8,10 @@ export const Header = ({ blok }) => {
   )?.itensCabecalho;
 
   const isMobile = useMediaQuery("(max-width: 1024px)");
+
+  const scrollToForm = (id) => {
+    document.getElementById(id).scrollIntoView();
+  };
 
   return (
     <div className="w-[100%] h-[120px] lg:pl-0 pl-10  text-black items-center justify-start lg:justify-center flex ">
@@ -36,7 +39,10 @@ export const Header = ({ blok }) => {
                   </div>
                 </div>
               ) : (
-                <div className="hover:text-[#F4D779] cursor-pointer text-center ml-[24px] text-[14px] font-bold font-['Montserrat'] ">
+                <div
+                  onClick={() => scrollToForm(itemBlok.id)}
+                  className="hover:text-[#F4D779] cursor-pointer text-center ml-[24px] text-[14px] font-bold font-['Montserrat'] "
+                >
                   {itemBlok?.name}
                 </div>
               )}

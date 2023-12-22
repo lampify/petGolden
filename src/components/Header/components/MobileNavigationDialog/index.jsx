@@ -9,6 +9,10 @@ export function MobileNavigationDialog({ navItems }) {
 
   const logo = navItems.find((item) => item.img);
 
+  const scrollToForm = (id) => {
+    document.getElementById(id).scrollIntoView();
+  };
+
   return (
     <>
       <RxHamburgerMenu
@@ -43,7 +47,10 @@ export function MobileNavigationDialog({ navItems }) {
               {navItems.map((itemBlok) => (
                 <>
                   {!itemBlok?.img && (
-                    <div className="hover:text-[#F4D779] cursor-pointer text-left ml-[15px] text-[20px] mb-2 font-bold font-['Montserrat'] ">
+                    <div
+                      onClick={() => scrollToForm(itemBlok.id)}
+                      className="hover:text-[#F4D779] cursor-pointer text-left ml-[15px] text-[20px] mb-2 font-bold font-['Montserrat'] "
+                    >
                       {itemBlok?.name}
                     </div>
                   )}

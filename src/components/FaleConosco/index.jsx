@@ -15,6 +15,7 @@ export function FaleConosco({ blok }) {
 
   return (
     <div
+      id="contatoId"
       style={{
         backgroundImage: `url(${Background})`,
         backgroundSize: "cover",

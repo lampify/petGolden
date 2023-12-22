@@ -6,7 +6,7 @@ export const QualidadeDogs = ({ blok }) => {
   );
 
   return (
-    <div className="md:px-0 bg-[#F6F6F6] px-10">
+    <div id="qualidadeDiorDogsId" className="md:px-0 bg-[#F6F6F6] px-10">
       <div className=" py-6 pt-24 justify-center flex">
         <div>
           <div className="flex justify-center">

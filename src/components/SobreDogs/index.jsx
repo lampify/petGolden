@@ -7,6 +7,7 @@ export function SobreDogs({ blok }) {
   );
   return (
     <div
+      id="sobreNosId"
       style={{
         backgroundImage: `url(${Patas})`,
         backgroundSize: "cover",
