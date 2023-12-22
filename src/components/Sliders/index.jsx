@@ -5,6 +5,7 @@ export const Sliders = ({
   slide,
   isVisibleChevron = false,
   bg = "gray-200",
+  color = "bg-[#003962]",
   ...rest
 }) => {
   const slidesVisiveis = slide;
@@ -89,10 +90,8 @@ export const Sliders = ({
                 >
                   <div
                     className={`${
-                      listSlide?.key === slideItem.key
-                        ? "bg-[#003962]"
-                        : "bg-gray-400"
-                    } w-[10px] h-[10px] border-1px border-solid mr-1 cursor-pointer rounded-full`}
+                      listSlide?.key === slideItem.key ? color : "bg-gray-400"
+                    } w-[15px] h-[15px] border-1px border-solid mr-1 cursor-pointer rounded-full`}
                     onClick={() => modificarSlide(index)}
                   />
                 </div>

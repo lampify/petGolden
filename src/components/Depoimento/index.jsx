@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import Patas from "../../assets/patterns.png";
 import { Sliders } from "../Sliders";
 
 export function Depoimento({ blok }) {
@@ -7,15 +7,21 @@ export function Depoimento({ blok }) {
   );
   return (
     <>
-      <div className="mt-24 h-[calc(100vh-200px)] relative">
-        <div className="flex px-10 justify-center">
+      <div
+        style={{
+          backgroundImage: `url(${Patas})`,
+          backgroundSize: "cover",
+        }}
+        className="mt-24 h-[calc(100vh-180px)] bg-[#003962] relative"
+      >
+        <div className="flex pt-5 px-10 text-white justify-center">
           <h2 className="sm:text-[28px] text-center text-[18px] font-bold font-['Roboto']">
             {depoimentoItems.titulo}
-            <span className="text-[#003962]">{depoimentoItems.titulo2}</span>
+            <span className="text-[#F4D779]">{depoimentoItems.titulo2}</span>
           </h2>
         </div>
         <div className="flex px-10 mt-4 justify-center">
-          <p className="sm:w-[800px] w-[100%] text-center text-gray-500">
+          <p className="sm:w-[800px] w-[100%] text-center text-white">
             {depoimentoItems.subtitulo}
           </p>
         </div>
@@ -48,7 +54,6 @@ export function Depoimento({ blok }) {
           </div>
         </div>
       </div>
-      <div className="bg-[#003962]  w-[full] h-[180px]" />
     </>
   );
 }

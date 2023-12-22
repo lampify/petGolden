@@ -1,32 +1,39 @@
 import { Sliders } from "../Sliders";
+import Patas from "../../assets/patterns.png";
 
 export function SobreDogs({ blok }) {
   const sobreDogsItems = blok?.body?.find(
     (blokItem) => blokItem?.component === "sobreEmpresa"
   );
   return (
-    <div className="flex md:pt-28 py-10 justify-around pb-24 ">
-      <Sliders
-        slide={sobreDogsItems.cards.map((itemCard) => ({
-          content: (
-            <div className="w-[478px] h-[345px] flex items-center font-['Poppins']">
-              <div>
-                <h4 className="text-[20px] text-[#003962] mb-2 font-bold">
-                  {itemCard.titulo}
-                </h4>
-                <p className="text-[14px]">{itemCard.subtitulo}</p>
+    <div
+      style={{
+        backgroundImage: `url(${Patas})`,
+        backgroundSize: "cover",
+      }}
+      className="flex px-5  xl:px-0 sm:px-10 md:pt-28 bg-[#003962] py-10 justify-around pb-24 "
+    >
+      <div className="">
+        <Sliders
+          color="bg-white"
+          slide={sobreDogsItems.cards.map((itemCard) => ({
+            content: (
+              <div className="xl:w-[478px] z-50 lg:w-[430px] w-[100%] sm:w-[500px] h-[345px] flex items-center font-['Poppins']">
+                <div>
+                  <h4 className="text-[20px]  text-[#F4D779] mb-2 font-bold">
+                    {itemCard.titulo}
+                  </h4>
+                  <p className="lg:text-[14px] text-[14px] sm:text-[16px]  text-white">
+                    {itemCard.subtitulo}
+                  </p>
+                </div>
               </div>
-            </div>
-          ),
-          key: itemCard._uid,
-        }))}
-      />
-      <div
-        style={{
-          backgroundColor: sobreDogsItems.corFundo,
-        }}
-        className="w-[571px] rounded-[10px] h-[380px] relative"
-      >
+            ),
+            key: itemCard._uid,
+          }))}
+        />
+      </div>
+      <div className="xl:w-[571px] w-[450px] lg:flex hidden rounded-[10px] h-[380px] relative">
         <img
           alt="imagem da Gabi com um filhote de golden"
           src={sobreDogsItems.imagem}
