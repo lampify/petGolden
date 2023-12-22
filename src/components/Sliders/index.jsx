@@ -1,5 +1,6 @@
 import { useState, useCallback } from "react";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
+import "./style.css";
 
 export const Sliders = ({
   slide,

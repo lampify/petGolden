@@ -16,10 +16,14 @@ export const ItemBlog = ({ blogItems }) => {
         <h2 className="text-[20px] font-bold mb-8">{blogItems.titulo}</h2>
         <p className=" w-[60%] text-[14px] mb-8">{blogItems.subtitulo}</p>
         <div className="w-[201px] h-[52px] relative">
-          <div className="w-[250px] h-[52px] left-0 top-0 absolute bg-orange-400 rounded-[26px] shadow" />
-          <div className="left-[42px] top-[8px] absolute whitespace-nowrap text-white text-2xl font-medium font-['Poppins']">
-            Acesse o Blog!
-          </div>
+          <a target="_blank" href={blogItems.button.url} rel="noreferrer">
+            <button
+              type="button"
+              className="text-white w-[200px] bg-orange-400 focus:outline-none font-medium rounded-3xl text-sm px-5 py-2.5 text-center items-center me-2 mb-2"
+            >
+              Acesse o Blog!
+            </button>
+          </a>
         </div>
       </div>
     </>
