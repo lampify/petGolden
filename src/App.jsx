@@ -8,6 +8,7 @@ import { Depoimento } from "./components/Depoimento";
 import { BlogDiorDogs } from "./components/BlogDiorDogs";
 import { FaleConosco } from "./components/FaleConosco";
 import { Rodape } from "./components/Rodape";
+import { Loading } from "./components/Loading";
 
 function App() {
   let slug =
@@ -17,7 +18,7 @@ function App() {
 
   const story = useStoryblok(slug, { version: "draft", cv: "1699263279" });
   if (!story || !story.content) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   const faleConoscoItems = story.content?.body?.find(

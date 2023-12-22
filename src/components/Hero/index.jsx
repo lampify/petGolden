@@ -39,7 +39,7 @@ export const Hero = ({ blok }) => {
               <div className="w-[100%] items-center flex justify-center ">
                 <a
                   target="_blank"
-                  href={heroItems.nossoEspaco}
+                  href={heroItems?.nossoEspaco}
                   rel="noreferrer"
                 >
                   <button
@@ -65,7 +65,7 @@ export const Hero = ({ blok }) => {
                 <div className="w-[100%] items-center flex justify-center ">
                   <a
                     target="_blank"
-                    href={heroItems.nossoEspaco}
+                    href={heroItems?.nossoEspaco}
                     rel="noreferrer"
                   >
                     <button
