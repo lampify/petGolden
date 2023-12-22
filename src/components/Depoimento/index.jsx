@@ -14,7 +14,7 @@ export function Depoimento({ blok }) {
           backgroundImage: `url(${Patas})`,
           backgroundSize: "cover",
         }}
-        className="mt-24 h-[auto] pb-14 bg-[#003962] relative"
+        className="sm:mt-24 mt-8  h-[auto] pb-14 bg-[#003962] relative"
       >
         <div className="flex pt-5 px-10 text-white justify-center">
           <h2 className="sm:text-[28px] text-center text-[18px] font-bold font-['Roboto']">
@@ -29,7 +29,7 @@ export function Depoimento({ blok }) {
         </div>
         <div className="w-[100%] justify-center flex">
           <div className="flex mt-4 justify-center sm:px-20 ">
-            <div className="shadow-md sm:p-7 sm:px-0 py-3 bg-white rounded-2xl md:w-[900px] w-[90%] mt-1 sm:mt-14 ">
+            <div className="shadow-md z-50 sm:p-7 sm:px-0 py-3 bg-white rounded-2xl md:w-[900px] w-[90%] mt-1 sm:mt-14 ">
               <Sliders
                 isVisibleChevron
                 slide={depoimentoItems.cardDepoimento.map((itemCard) => ({

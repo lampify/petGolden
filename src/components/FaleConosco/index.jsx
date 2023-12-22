@@ -14,7 +14,7 @@ export function FaleConosco({ blok, linkWhatsApp }) {
         backgroundImage: `url(${Background})`,
         backgroundSize: "cover",
       }}
-      className="flex justify-center items-center px-10 my-24 h-[452px]"
+      className="flex justify-center items-center px-10 sm:my-24 my-8 h-[452px]"
     >
       <div className="2xl:w-[33%] w-[100%] sm:w-[60%] lg:w-[40%]">
         <h2 className="text-black text-center mb-5 text-2xl sm:text-3xl font-bold font-['Roboto']">

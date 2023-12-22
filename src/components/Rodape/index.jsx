@@ -14,7 +14,7 @@ export function Rodape({ blok, linkWhatsApp }) {
   const valueYear = new Date().getFullYear();
 
   return (
-    <div className="bg-[#003962] sm:pt-0 pt-7 px-5 sm:px-10 xl:px-40 mt-24 h-[452px]">
+    <div className="bg-[#003962] sm:pt-0 pt-7 px-5 sm:px-10 xl:px-40 sm:mt-24 h-[452px]">
       <div className="sm:flex  justify-between h-[80%] items-center ">
         <div className="flex sm:grid">
           {rodapeItems.patrocinadores.map((item) => (

@@ -78,7 +78,7 @@ export const Sliders = ({
         </div>
 
         {existeProximoSlide && (
-          <div className="flex justify-center">
+          <div className="flex   justify-center">
             {slide.map((slideItem, index) => {
               return (
                 <div
@@ -92,7 +92,7 @@ export const Sliders = ({
                   <div
                     className={`${
                       listSlide?.key === slideItem.key ? color : "bg-gray-400"
-                    } w-[15px] h-[15px] border-1px border-solid mr-1 cursor-pointer rounded-full`}
+                    } w-[15px]   h-[15px] border-1px border-solid mr-1 cursor-pointer rounded-full`}
                     onClick={() => modificarSlide(index)}
                   />
                 </div>
