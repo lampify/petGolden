@@ -21,23 +21,28 @@ export function Depoimento({ blok }) {
             <span className="text-[#F4D779]">{depoimentoItems.titulo2}</span>
           </h2>
         </div>
-        <div className="flex px-10 mt-4 justify-center">
+        <div className="flex sm:px-10 px-3 mt-4 justify-center">
           <p className="sm:w-[800px] w-[100%] text-center text-white">
             {depoimentoItems.subtitulo}
           </p>
         </div>
         <div className="w-[100%] justify-center flex">
-          <div className="flex mt-4 justify-center px-20 ">
-            <div className="shadow-md p-7 bg-white rounded-2xl md:w-[900px] w-[90%] mt-1 sm:mt-14 ">
+          <div className="flex mt-4 justify-center sm:px-20 ">
+            <div className="shadow-md sm:p-7 sm:px-0 py-3 bg-white rounded-2xl md:w-[900px] w-[90%] mt-1 sm:mt-14 ">
               <Sliders
                 isVisibleChevron
                 slide={depoimentoItems.cardDepoimento.map((itemCard) => ({
                   content: (
-                    <div className="md:w-[790px] w-[100%] h-[380px] max-h-[380px] overflow-y-auto grid justify-between items-center font-['Poppins']">
+                    <div className="md:w-[790px]  min-w-[250px] w-[100%] h-[380px] max-h-[380px] overflow-y-auto grid justify-between items-center font-['Poppins']">
                       <div className="flex justify-center">
                         <div className="w-[85%]">
-                          <p className="sm:text-[16px] text-[14px] text-center ">
+                          <p className="sm:text-[16px] sm:flex hidden text-[14px] text-center ">
                             {itemCard.subtitulo}
+                          </p>
+                          <p className="sm:text-[16px] flex sm:hidden text-[14px] text-center ">
+                            {itemCard.subtitulo.length > 300
+                              ? `${itemCard.subtitulo.slice(0, 300)}...`
+                              : itemCard.subtitulo}
                           </p>
                         </div>
                       </div>
