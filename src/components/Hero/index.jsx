@@ -1,6 +1,7 @@
 import { Header } from "../Header";
 import blob from "../../assets/blob.png";
 import Patas from "../../assets/patas.png";
+import Mobile from "../../assets/mobile.png";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 export const Hero = ({ blok }) => {
@@ -18,37 +19,48 @@ export const Hero = ({ blok }) => {
       }}
       className="w-[100%] overflow-hidden h-[100vh] bg-[#F6F6F6]"
     >
-      <Header blok={blok} />
-
-      <div className="text-black overflow-hidden h-[calc(100%-110px)] flex justify-between">
+      <div className="sm:flex hidden">
+        <Header blok={blok} />
+      </div>
+      <div className="text-black overflow-hidden h-[auto] sm:h-[calc(100%-110px)] flex justify-between">
         {isMobile ? (
           <div
             style={{
               backgroundImage: `url(${Patas})`,
               backgroundSize: "cover",
             }}
-            className="w-[100%] flex  items-center  justify-center"
+            className="w-[100%]  flex  items-center  justify-center"
           >
-            <div className=" px-10 relative">
-              <div className=" text-center left-0 top-0 text-black sm:text-5xl text-3xl font-bold font-['Roboto'] uppercase">
-                {heroItems?.titulo}
+            <div>
+              <div className="sm:hidden flex absolute">
+                <Header blok={blok} />
               </div>
-              <div className=" text-center  left-0 my-5 text-black text-[13px] font-normal font-['Poppins']">
-                {heroItems?.subtitulo}
-              </div>
-              <div className="w-[100%] items-center flex justify-center ">
-                <a
-                  target="_blank"
-                  href={heroItems?.nossoEspaco}
-                  rel="noreferrer"
-                >
-                  <button
-                    type="button"
-                    className="text-black w-[200px] bg-amber-200 focus:outline-none font-medium rounded-3xl text-sm px-5 py-2.5 text-center items-center me-2 mb-2"
+              <img
+                alt=""
+                className="sm:hidden mb-6 flex object-cover h-[300px] w-[100%]"
+                src={Mobile}
+              />
+              <div className=" px-10 relative">
+                <div className=" text-center left-0 top-0 text-black sm:text-5xl text-3xl font-bold font-['Roboto'] uppercase">
+                  {heroItems?.titulo}
+                </div>
+                <div className=" text-center  left-0 my-5 text-black text-[13px] font-normal font-['Poppins']">
+                  {heroItems?.subtitulo}
+                </div>
+                <div className="w-[100%] items-center flex justify-center ">
+                  <a
+                    target="_blank"
+                    href={heroItems?.nossoEspaco}
+                    rel="noreferrer"
                   >
-                    Nosso espaço
-                  </button>
-                </a>
+                    <button
+                      type="button"
+                      className="text-black w-[200px] bg-amber-200 focus:outline-none font-medium rounded-3xl text-sm px-5 py-2.5 text-center items-center me-2 mb-2"
+                    >
+                      Nosso espaço
+                    </button>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
