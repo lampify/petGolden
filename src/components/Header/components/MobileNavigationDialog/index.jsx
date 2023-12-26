@@ -7,7 +7,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 export function MobileNavigationDialog({ navItems }) {
   const [open, setOpen] = useState(false);
 
-  const logo = navItems.find((item) => item.img);
+  const logo = navItems[0].logo;
 
   const scrollToForm = (id) => {
     document.getElementById(id).scrollIntoView();
@@ -33,7 +33,7 @@ export function MobileNavigationDialog({ navItems }) {
                   <img
                     className="w-[100px] mb-2 ml-2"
                     alt="logo da página"
-                    src={logo.img}
+                    src={logo.logo}
                   />
                 </span>
                 <IoMdCloseCircleOutline

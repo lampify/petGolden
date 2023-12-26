@@ -1,6 +1,6 @@
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 
-import Background from "../../assets/background-yellow-patas.png";
+import Background from "../../assets/background-yellow-patterns.png";
 
 export function FaleConosco({ blok, linkWhatsApp }) {
   const faleConoscoItems = blok?.body?.find(

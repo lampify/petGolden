@@ -1,14 +1,12 @@
+import Golden from "../../../../assets/golden.png";
+
 export const ItemBlog = ({ blogItems }) => {
   return (
     <>
       <div className="w-[60%] mt-6 ">
         <div className="justify-center flex">
-          <div className="pb-[200px]">
-            <img
-              alt="banner dior dogs"
-              className="h-[98.4%]"
-              src={blogItems.banner}
-            />
+          <div className="pb-[80px]">
+            <img alt="banner dior dogs" className="h-[100%]" src={Golden} />
           </div>
         </div>
       </div>

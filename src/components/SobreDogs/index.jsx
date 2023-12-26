@@ -1,5 +1,7 @@
-import { Sliders } from "../Sliders";
+import BabyGolden from "../../assets/baby-golden.jpeg";
 import Patas from "../../assets/patterns.png";
+
+import { Sliders } from "../Sliders";
 
 export function SobreDogs({ blok }) {
   const sobreDogsItems = blok?.body?.find(
@@ -37,7 +39,7 @@ export function SobreDogs({ blok }) {
       <div className="xl:w-[571px] w-[450px] lg:flex hidden rounded-[10px] h-[380px] relative">
         <img
           alt="imagem da Gabi com um filhote de golden"
-          src={sobreDogsItems.imagem}
+          src={BabyGolden}
           className="absolute w-[571px] rounded-[10px] h-[380px] object-center top-[-35px] right-[-35px] drop-shadow-2xl"
         />
       </div>

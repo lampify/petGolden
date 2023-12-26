@@ -1,11 +1,20 @@
-import Background from "../../assets/Group.png";
+import Background from "../../assets/group.png";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
+import jsonHeader from "../../json/header.json";
+
 import { MobileNavigationDialog } from "./components/MobileNavigationDialog";
 
 export const Header = ({ blok }) => {
-  const itensCabecalho = blok?.body?.find(
+  const blokHeader = blok?.body?.find(
     (blokItem) => blokItem?.component === "header"
   )?.itensCabecalho;
+
+  const linkLogo = blokHeader.find((item) => item.img).img;
+
+  const itemsHeader = jsonHeader.map((itemHeader) => ({
+    ...itemHeader,
+    logo: linkLogo,
+  }));
 
   const isMobile = useMediaQuery("(max-width: 1024px)");
 
@@ -17,11 +26,11 @@ export const Header = ({ blok }) => {
     <div className="w-[100%] h-[120px] lg:pl-0 pl-10  text-black items-center justify-start lg:justify-center flex ">
       {isMobile ? (
         <>
-          <MobileNavigationDialog navItems={itensCabecalho} />
+          <MobileNavigationDialog navItems={itemsHeader} />
         </>
       ) : (
         <div className="ml-[-6%] items-center justify-center flex">
-          {itensCabecalho.map((itemBlok) => (
+          {itemsHeader.map((itemBlok) => (
             <>
               {itemBlok?.img ? (
                 <div
@@ -34,7 +43,7 @@ export const Header = ({ blok }) => {
                     <img
                       className="w-[100px] mb-2 ml-2"
                       alt="logo da página"
-                      src={itemBlok.img}
+                      src={itemBlok.logo}
                     />
                   </div>
                 </div>

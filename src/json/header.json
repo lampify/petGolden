@@ -1,0 +1,25 @@
+[
+  {
+    "id": "qualidadeDiorDogsId",
+    "name": "Qualidade Dior dogs"
+  },
+  {
+    "id": "sobreNosId",
+    "name": "Sobre nós"
+  },
+  {
+    "img": true
+  },
+  {
+    "id": "goldensId",
+    "name": "Os Goldens"
+  },
+  {
+    "id": "depoimentosId",
+    "name": "Depoimentos"
+  },
+  {
+    "id": "contatoId",
+    "name": "Contato"
+  }
+]
