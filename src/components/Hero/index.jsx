@@ -1,8 +1,8 @@
-import blob from "../../assets/blob.png";
-import Patas from "../../assets/patterns-white.png";
-import Mobile from "../../assets/dog-mobile.png";
-import BannerPrincipal from "../../assets/banner.png";
-import { useMediaQuery } from "../../hooks/useMediaQuery";
+import blob from "assets/blob.png";
+import Patas from "assets/patterns-white.png";
+import Mobile from "assets/dog-mobile.png";
+import BannerPrincipal from "assets/banner.png";
+import { useMediaQuery } from "hooks/useMediaQuery";
 
 import { Header } from "../Header";
 
@@ -24,7 +24,7 @@ export const Hero = ({ blok }) => {
       <div className="sm:flex hidden">
         <Header blok={blok} />
       </div>
-      <div className="text-black overflow-hidden h-[auto] sm:h-[calc(100%-110px)] flex justify-between">
+      <div className="text-black w-[100%] overflow-hidden h-[auto] sm:h-[calc(100%-110px)] flex justify-between">
         {isMobile ? (
           <div
             style={{
@@ -67,10 +67,10 @@ export const Hero = ({ blok }) => {
             </div>
           </div>
         ) : (
-          <>
-            <div className="w-[50%] lg:w-[40%]  flex  items-center  justify-end">
+          <div className="flex  w-[100%] justify-between 2xl:justify-evenly">
+            <div className="flex mr-[10%]  items-center  justify-end">
               <div className="w-[475px] 2xl:pl-0 pl-10  h-[317px] relative">
-                <div className="2xl:w-[670px]  w-[600px] left-0 top-0 text-black text-5xl font-bold font-['Roboto'] uppercase">
+                <div className="2xl:w-[670px] w-[600px] left-0 top-0 text-black text-5xl font-bold font-['Roboto'] uppercase">
                   {heroItems?.titulo}
                 </div>
                 <div className="w-[475px]  left-0 my-5 text-black text-[13px] font-normal font-['Poppins']">
@@ -92,8 +92,8 @@ export const Hero = ({ blok }) => {
                 </div>
               </div>
             </div>
-            <div className="lg:w-[60%] w-[45%]  overflow-hidden 2xl:mr-[10%] mr-[-6%] h-[91%] flex items-end justify-end">
-              <div className="relative lg:mb-0 2xl:mb-10 mb-20">
+            <div className="overflow-hidden  h-[91%] flex items-center justify-end">
+              <div className="w-[90%]  relative">
                 <img src={blob} alt="fundo do banner" />
 
                 <img
@@ -103,7 +103,7 @@ export const Hero = ({ blok }) => {
                 />
               </div>
             </div>
-          </>
+          </div>
         )}
       </div>
     </div>

@@ -1,6 +1,7 @@
-import Background from "../../assets/background-yellow.png";
-import { useMediaQuery } from "../../hooks/useMediaQuery";
-import BackgroundYellow from "../../assets/background-yellow-patterns.png";
+import Background from "assets/background-yellow.png";
+import { useMediaQuery } from "hooks/useMediaQuery";
+import BackgroundYellow from "assets/background-yellow-patterns.png";
+
 import { ItemBlogMobile } from "./components/itemBlogMobile";
 import { ItemBlog } from "./components/itemBlog";
 

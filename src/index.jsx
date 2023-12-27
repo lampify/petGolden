@@ -3,7 +3,6 @@ import { createRoot } from "react-dom/client";
 import { storyblokInit, apiPlugin } from "@storyblok/react";
 
 import App from "./App";
-import "./index.css";
 
 storyblokInit({
   accessToken: "Alqit3DhTkW64Hr4nmwcxQtt",

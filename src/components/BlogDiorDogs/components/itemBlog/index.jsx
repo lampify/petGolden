@@ -1,4 +1,4 @@
-import Golden from "../../../../assets/golden.png";
+import Golden from "assets/golden.png";
 
 export const ItemBlog = ({ blogItems }) => {
   return (
