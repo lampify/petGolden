@@ -1,4 +1,4 @@
-import group from "assets/group.png";
+import Group from "../../../../assets/group.png";
 
 export const HeaderBlog = ({ blok }) => {
   return (
@@ -6,7 +6,7 @@ export const HeaderBlog = ({ blok }) => {
       <div className="w-[100%] border-b-2 pb-5 flex items-center justify-between">
         <div
           style={{
-            backgroundImage: `url(${group})`,
+            backgroundImage: `url(${Group})`,
           }}
           className="w-[133px] flex justify-center items-center h-[105px] "
         >
