@@ -1,7 +1,16 @@
+import { useNavigate } from "react-router-dom";
+
 import { useMediaQuery } from "hooks/useMediaQuery";
 
 export const ItemBlogMobile = ({ blogItems }) => {
   const isMobile = useMediaQuery("(max-width: 500px)");
+
+  const navigate = useNavigate();
+
+  const handleAcessarBlog = () => {
+    navigate("/blog");
+  };
+
   return (
     <div
       className="mobile:h-[770px]  h-[100%] mobile:mb-[170px] mb-0 relative flex justify-center mobile:items-end items-center"
@@ -17,14 +26,13 @@ export const ItemBlogMobile = ({ blogItems }) => {
           </h2>
           <p className="text-center  text-[14px] mb-8">{blogItems.subtitulo}</p>
           <div className="flex justify-center">
-            <a target="_blank" href={blogItems.button.url} rel="noreferrer">
-              <button
-                type="button"
-                className="text-white w-[200px] bg-orange-400 focus:outline-none font-medium rounded-3xl text-sm px-5 py-2.5 text-center items-center me-2 mb-2"
-              >
-                Acesse o Blog!
-              </button>
-            </a>
+            <button
+              type="button"
+              onClick={handleAcessarBlog}
+              className="text-white w-[200px] bg-orange-400 focus:outline-none font-medium rounded-3xl text-sm px-5 py-2.5 text-center items-center me-2 mb-2"
+            >
+              Acesse o Blog!
+            </button>
           </div>
         </div>
       </div>

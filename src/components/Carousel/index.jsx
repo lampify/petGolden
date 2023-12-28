@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 
-export const Carousel = ({ title, items }) => {
+export const Carousel = ({ title, items, handleSelecionarConteudoBlog }) => {
   const [scrollX, setScrollX] = useState(0);
 
   const handleLeftArrow = () => {
@@ -37,7 +37,7 @@ export const Carousel = ({ title, items }) => {
       </h2>
       {scrollX !== 0 && (
         <div
-          className="left-0 absolute h-[216px] bg-[rgba(238,233,233,0.6)] rounded-tl-xl rounded-bl-xl mt-[12px] z-50 flex items-center justify-center overflow-hidden cursor-pointer transition-all ease-in-out duration-200"
+          className="left-0 absolute h-[226px] bg-[rgba(238,233,233,0.6)] rounded-tl-xl rounded-bl-xl mt-[12px] z-50 flex items-center justify-center overflow-hidden cursor-pointer transition-all ease-in-out duration-200"
           onClick={handleLeftArrow}
         >
           <FiChevronLeft size={50} />
@@ -45,7 +45,7 @@ export const Carousel = ({ title, items }) => {
       )}
       {isValueUltimoCard !== scrollX && tamanhoCardUltrapassandoTela && (
         <div
-          className="right-0 absolute bg-[rgba(238,233,233,0.6)]  h-[216px] mt-[12px]  rounded-tr-xl rounded-br-xl z-50 flex items-center justify-center overflow-hidden cursor-pointer  transition-all ease-in-out duration-200"
+          className="right-0 absolute bg-[rgba(238,233,233,0.6)]  h-[226px] mt-[12px]  rounded-tr-xl rounded-br-xl z-50 flex items-center justify-center overflow-hidden cursor-pointer  transition-all ease-in-out duration-200"
           onClick={handleRightArrow}
         >
           <FiChevronRight size={50} />
@@ -63,8 +63,9 @@ export const Carousel = ({ title, items }) => {
           {items.length > 0 &&
             items.map((item, key) => (
               <div
-                key={key}
-                className="w-[100%] cursor-pointer h-[250px] pb-2  border-2 rounded-xl scale-90 transition-all ease-in-out duration-200"
+                key={item.titulo}
+                onClick={() => handleSelecionarConteudoBlog(key)}
+                className="w-[100%]  hover:opacity-[0.6] cursor-pointer h-[250px] pb-2  border-2 rounded-xl scale-90 transition-all ease-in-out duration-200"
               >
                 <img
                   alt={`imagem sobre ${item.titulo}`}

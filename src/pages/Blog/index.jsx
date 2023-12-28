@@ -4,6 +4,8 @@ import { Loading } from "components/Loading";
 
 import { HeaderBlog } from "./components/Header";
 import { ConteudoBlog } from "./components/ConteudoBlog";
+import { Rodape } from "components/Rodape";
+import { Comments, FacebookProvider } from "react-facebook";
 
 export const Blog = () => {
   let slug =
@@ -21,14 +23,10 @@ export const Blog = () => {
   );
 
   return (
-    <div className="pt-7 px-7">
+    <div className="pt-7">
       <HeaderBlog blok={blok} />
-      {/* <div className="unreset">
-        <div dangerouslySetInnerHTML={{ __html: html }} />
-      </div> */}
-      <div className="px-[20px]">
-        <ConteudoBlog blok={blok} />
-      </div>
+      <ConteudoBlog blok={blok} />
+      <Rodape blok={story.content} />
     </div>
   );
 };

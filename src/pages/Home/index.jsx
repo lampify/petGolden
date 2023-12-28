@@ -38,7 +38,7 @@ export const Home = () => {
       <BlogDiorDogs blok={story.content} />
       <Depoimento blok={story.content} />
       <FaleConosco linkWhatsApp={linkWhatsApp} blok={story.content} />
-      <Rodape linkWhatsApp={linkWhatsApp} blok={story.content} />
+      <Rodape blok={story.content} />
     </div>
   );
 };

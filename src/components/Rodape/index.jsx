@@ -6,15 +6,23 @@ import {
   FaHome,
 } from "react-icons/fa";
 
-export function Rodape({ blok, linkWhatsApp }) {
+export function Rodape({ blok }) {
   const rodapeItems = blok?.body?.find(
     (blokItem) => blokItem?.component === "rodape"
   );
 
+  const valueWhatsApp = rodapeItems?.whatsApp[0];
+  const numeroWhatsApp = valueWhatsApp?.titulo;
+  const linkWhatsApp =
+    "https://api.whatsapp.com/send?phone=" +
+    valueWhatsApp?.link +
+    "&text=" +
+    valueWhatsApp.mensagem;
+
   const valueYear = new Date().getFullYear();
 
   return (
-    <div className="bg-[#003962] sm:pt-0 pt-7 px-5 sm:px-10 xl:px-40 sm:mt-24 h-[452px]">
+    <div className="bg-[#003962] sm:pt-0 pt-7 px-5 sm:px-10 xl:px-40 sm:mt-14 h-[452px]">
       <div className="sm:flex  justify-between h-[80%] items-center ">
         <div className="flex sm:grid">
           {rodapeItems.patrocinadores.map((item) => (
@@ -30,7 +38,7 @@ export function Rodape({ blok, linkWhatsApp }) {
           <a target="_blank" href={linkWhatsApp} rel="noreferrer">
             <p className="flex mb-2 items-center text-[14px]">
               <FaWhatsapp size={14} className="mr-2" />
-              {rodapeItems.whatsApp}
+              {numeroWhatsApp}
             </p>
           </a>
           <a

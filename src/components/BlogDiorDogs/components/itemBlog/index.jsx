@@ -1,6 +1,14 @@
+import { useNavigate } from "react-router-dom";
+
 import Golden from "assets/golden.png";
 
 export const ItemBlog = ({ blogItems }) => {
+  const navigate = useNavigate();
+
+  const handleAcessarBlog = () => {
+    navigate("/blog");
+  };
+
   return (
     <>
       <div className="w-[60%] mt-6 ">
@@ -14,14 +22,13 @@ export const ItemBlog = ({ blogItems }) => {
         <h2 className="text-[20px] font-bold mb-8">{blogItems.titulo}</h2>
         <p className=" w-[60%] text-[14px] mb-8">{blogItems.subtitulo}</p>
         <div className="w-[201px] h-[52px] relative">
-          <a target="_blank" href={blogItems.button.url} rel="noreferrer">
-            <button
-              type="button"
-              className="text-white w-[200px] bg-orange-400 focus:outline-none font-medium rounded-3xl text-sm px-5 py-2.5 text-center items-center me-2 mb-2"
-            >
-              Acesse o Blog!
-            </button>
-          </a>
+          <button
+            onClick={handleAcessarBlog}
+            type="button"
+            className="text-white w-[200px] bg-orange-400 focus:outline-none font-medium rounded-3xl text-sm px-5 py-2.5 text-center items-center me-2 mb-2"
+          >
+            Acesse o Blog!
+          </button>
         </div>
       </div>
     </>
