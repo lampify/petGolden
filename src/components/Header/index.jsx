@@ -1,4 +1,4 @@
-import Background from "../../assets/group.png";
+import Background from "assets/group.png";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 import jsonHeader from "../../json/header.json";
 

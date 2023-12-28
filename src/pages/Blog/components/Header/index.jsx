@@ -1,4 +1,4 @@
-import group from "../../../../assets/group.png";
+import group from "assets/group.png";
 
 export const HeaderBlog = ({ blok }) => {
   return (

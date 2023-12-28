@@ -5,7 +5,6 @@ import { Loading } from "components/Loading";
 import { HeaderBlog } from "./components/Header";
 import { ConteudoBlog } from "./components/ConteudoBlog";
 import { Rodape } from "components/Rodape";
-import { Comments, FacebookProvider } from "react-facebook";
 
 export const Blog = () => {
   let slug =
