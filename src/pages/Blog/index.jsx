@@ -7,12 +7,11 @@ import { ConteudoBlog } from "./components/ConteudoBlog";
 import { Rodape } from "components/Rodape";
 
 export const Blog = () => {
-  let slug =
-    window.location.pathname === "/"
-      ? "blog"
-      : window.location.pathname.replace("/", "");
+  const story = useStoryblok("/blog", {
+    version: "draft",
+    cv: "1703690117",
+  });
 
-  const story = useStoryblok(slug, { version: "draft", cv: "1703690117" });
   if (!story || !story.content) {
     return <Loading />;
   }

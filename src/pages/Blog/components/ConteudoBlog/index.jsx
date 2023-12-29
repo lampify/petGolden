@@ -1,23 +1,29 @@
-import { useState } from "react";
 import { RichTextResolver } from "@storyblok/react";
 
+import { substituteRouteParameter } from "hooks/useSubstituteRouteParameter";
 import Patas from "assets/background-patterns-blue.jpg";
 
 import { Carousel } from "components/Carousel";
 
 import "../../style.css";
+import { useNavigate, useParams } from "react-router-dom";
 
 export const ConteudoBlog = ({ blok }) => {
-  const [indexConteudo, setIndexConteudo] = useState(0);
+  const navigate = useNavigate();
+  const idRoute = useParams();
 
   const listConteudo = blok.conteudo;
 
-  const itemConteudo = listConteudo[indexConteudo];
+  const itemConteudo = listConteudo.find((itemConteudo) =>
+    itemConteudo.rota.includes(idRoute.id)
+  );
 
   const textoInformativo = itemConteudo.textoInformativo;
 
-  const handleSelecionarConteudoBlog = (index) => {
-    setIndexConteudo(index);
+  const handleSelecionarConteudoBlog = (valueRoute) => {
+    const route = substituteRouteParameter("/blog:id", "id", valueRoute);
+
+    navigate(route);
   };
 
   const richTextResolver = new RichTextResolver();

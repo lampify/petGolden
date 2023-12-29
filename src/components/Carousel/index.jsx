@@ -64,7 +64,7 @@ export const Carousel = ({ title, items, handleSelecionarConteudoBlog }) => {
             items.map((item, key) => (
               <div
                 key={item.titulo}
-                onClick={() => handleSelecionarConteudoBlog(key)}
+                onClick={() => handleSelecionarConteudoBlog(item.rota)}
                 className="w-[100%]  hover:opacity-[0.6] cursor-pointer h-[250px] pb-2  border-2 rounded-xl scale-90 transition-all ease-in-out duration-200"
               >
                 <img

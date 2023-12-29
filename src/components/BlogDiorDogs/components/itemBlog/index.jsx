@@ -1,12 +1,15 @@
 import { useNavigate } from "react-router-dom";
 
 import Golden from "assets/golden.png";
+import { substituteRouteParameter } from "hooks/useSubstituteRouteParameter";
 
 export const ItemBlog = ({ blogItems }) => {
   const navigate = useNavigate();
 
+  const route = substituteRouteParameter("/blog:id", "id", blogItems?.rota);
+
   const handleAcessarBlog = () => {
-    navigate("/blog");
+    navigate(route);
   };
 
   return (
