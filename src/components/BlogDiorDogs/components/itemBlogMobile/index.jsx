@@ -1,14 +1,17 @@
 import { useNavigate } from "react-router-dom";
 
 import { useMediaQuery } from "hooks/useMediaQuery";
+import { substituteRouteParameter } from "hooks/useSubstituteRouteParameter";
 
 export const ItemBlogMobile = ({ blogItems }) => {
   const isMobile = useMediaQuery("(max-width: 500px)");
 
   const navigate = useNavigate();
 
+  const route = substituteRouteParameter("/blog:id", "id", blogItems?.rota);
+
   const handleAcessarBlog = () => {
-    navigate("/blog");
+    navigate(route);
   };
 
   return (
